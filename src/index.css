@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700&family=Dancing+Script:wght@400;700&display=swap');
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-cursive: "Dancing Script", cursive;
+  
+  --color-theme-bg: #FFF1F2;
+  --color-theme-text: #881337;
+  --color-theme-accent-light: #FB7185;
+  --color-theme-accent-deep: #E11D48;
+  --color-theme-accent-meta: #9F1239;
+  --color-theme-border: #FB7185;
+  --color-theme-soft-blur: #FECDD3;
+}
+
+@layer base {
+  body {
+    @apply bg-theme-bg text-theme-text font-sans selection:bg-theme-accent-deep selection:text-white;
+  }
+}
+
+.polaroid {
+  @apply bg-white p-4 pb-12 shadow-2xl border border-theme-border transition-transform duration-500;
+}
+
+.glass-morphism {
+  @apply bg-white/40 backdrop-blur-md border border-theme-accent-light/20;
+}
+
+.heart-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
